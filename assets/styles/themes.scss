@@ -4,12 +4,9 @@ body {
 }
 
 .credentials {
-  text-align: center;
-}
-
-form {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .space {
@@ -18,14 +15,4 @@ form {
   display: flex;
   height: 200px;
   justify-content: center;
-  // width: 200px;
-}
-
-.space2 {
-  align-items: center;
-  border: 1px solid black;
-  display: flex;
-  height: 200px;
-  justify-content: center;
-  // width: 300px;
 }
