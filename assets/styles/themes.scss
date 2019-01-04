@@ -3,6 +3,10 @@ body {
   max-width: 660px;
 }
 
+.board-background {
+  margin: 20px auto;
+}
+
 .credentials {
   display: flex;
   flex-direction: column;
@@ -15,4 +19,9 @@ body {
   display: flex;
   height: 200px;
   justify-content: center;
+}
+
+.user-output {
+  margin: 10px auto 30px;
+  text-align: center;
 }
