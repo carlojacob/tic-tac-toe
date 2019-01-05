@@ -9,7 +9,8 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = responseData => {
-  $('#user-output').text('Successfully Signed In. Enjoy The Game!')
+  $('#user-output').html('Successfully Signed In. Enjoy The Game!')
+  $('#user-output').append('<p>Player X\'s turn<p>') // Move this code to display after starting a new game only
   // hide sign-up and sign-in container
   $('#sign-up-or-in').hide()
   // show game board container
