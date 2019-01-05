@@ -9,13 +9,13 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = responseData => {
-  $('#user-output').text('Successfully Signed In. Enjoy The Game.')
+  $('#user-output').text('Successfully Signed In. Enjoy The Game!')
   // hide sign-up and sign-in container
   $('#sign-up-or-in').hide()
   // show game board container
   $('#game-board').show()
-  // show update password and sign-out container
-  $('#update-password-sign-out').show()
+  // show change password and sign-out container
+  $('#change-password-sign-out').show()
   // store user data for current session
   store.user = responseData.user
 }
@@ -24,14 +24,22 @@ const onSignInFailure = () => {
   $('#user-output').text('Could Not Sign In. Please Try Again')
 }
 
+const onChangePasswordSuccess = formData => {
+  $('#user-output').text('Password Changed. Please Record Your New Password')
+}
+
+const onChangePasswordFailure = () => {
+  $('#user-output').text('Could Not Change Password. Please Try Again')
+}
+
 const onSignOutSuccess = responseData => {
   $('#user-output').text('Successfully Signed Out. Have a Great Day!')
   // show sign-up and sign-in container
   $('#sign-up-or-in').show()
   // hide game board container
   $('#game-board').hide()
-  // hide update password and sign-out container
-  $('#update-password-sign-out').hide()
+  // hide change password and sign-out container
+  $('#change-password-sign-out').hide()
   // remove user data for closed session
   store.user = null
 }
@@ -46,5 +54,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure
 }
