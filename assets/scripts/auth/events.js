@@ -28,7 +28,17 @@ const onSignIn = event => {
   $('form').trigger('reset')
 }
 
+const onSignOut = event => {
+  event.preventDefault()
+
+  api.signOut()
+
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut
 }
