@@ -8,9 +8,9 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = () => {
   $('#user-output').text('Successfully Signed In. Enjoy The Game.')
-  // show or allow access to game board
+  // hide sign-up and sign-in container
   $('#sign-up-or-in').hide()
-  // $('#sign-in').hide()
+  // show game board container
   $('#game-board').show()
 }
 
