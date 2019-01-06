@@ -36,8 +36,14 @@ const spaceSelectionSuccess = currentSpaceId => {
     $('#game-board > div > div > div').on('click', gameOver)
     return
   }
-  $('#user-output').text(`Player ${players[(clickCount + 1) % 2]}'s Turn`)
   clickCount += 1
+  if (clickCount === 9) {
+    $('#game-board > div > div > div').off('click', onSpaceClick)
+    $('#game-board > div > div > div').on('click', gameOver)
+    over = true
+    return $('#user-output').text(`Game Over. It's a Draw!`)
+  }
+  $('#user-output').text(`Player ${players[(clickCount + 1) % 2]}'s Turn`)
 }
 
 const spaceSelectionFailure = () => { // ******remove braces if not needed******
