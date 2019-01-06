@@ -43,7 +43,7 @@ const spaceSelectionSuccess = currentSpaceId => {
     over = true
     return $('#user-output').text(`Game Over. It's a Draw!`)
   }
-  $('#user-output').text(`Player ${players[(clickCount + 1) % 2]}'s Turn`)
+  $('#user-output').text(`Player ${players[(clickCount) % 2]}'s Turn`)
 }
 
 const spaceSelectionFailure = () => { // ******remove braces if not needed******
