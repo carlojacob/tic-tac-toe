@@ -8,7 +8,7 @@
 const authenticationEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 
-// $('#game-board').hide() // temporarily display game-board on opening, while working on game code
+// $('#game-board').hide() // ******temporarily display game-board on opening, while working on game code******
 $('#change-password-sign-out').hide()
 
 $(() => {
