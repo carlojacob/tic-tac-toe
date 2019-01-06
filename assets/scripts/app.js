@@ -8,8 +8,9 @@
 const authenticationEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 
-// $('#game-board').hide() // ******temporarily display game-board on opening, while working on game code******
+$('#game-board').hide() // ******temporarily display game-board on load, while working on game code******
 $('#change-password-sign-out').hide()
+$('#reset').hide() // ******temporarily reset on load, while working on game code******
 
 $(() => {
   $('#sign-up').on('submit', authenticationEvents.onSignUp)
@@ -20,4 +21,5 @@ $(() => {
 
 $(() => {
   $('#game-board > div > div > div').on('click', gameEvents.onSpaceClick)
+  $('#reset').on('click', gameEvents.onResetClick)
 })

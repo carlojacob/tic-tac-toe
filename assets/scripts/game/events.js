@@ -2,7 +2,7 @@
 
 let clickCount = 0
 const players = ['X', 'O']
-const currentBoard = ['', '', '', '', '', '', '', '', '']
+let currentBoard = ['', '', '', '', '', '', '', '', '']
 const winningBoards = {
   'board1': [0, 1, 2],
   'board2': [3, 4, 5],
@@ -16,10 +16,29 @@ const winningBoards = {
 let over = false
 
 const onSpaceClick = event => {
+  event.preventDefault()
   respondToSpaceSelection(event)
 }
 
+const onResetClick = () => {
+  if (over === true) {
+    $('#game-board > div > div > div').on('click', onSpaceClick)
+  }
+  resetVariables()
+  $('#game-board > div > div > div').html('')
+  $('#user-output').text(`Game Reset`)
+  $('#user-output').append(`<p>Player ${players[clickCount % 2]}'s Turn</p>`)
+  $('#game-board > div > div > div').off('click', gameOver)
+}
+
+const resetVariables = () => {
+  over = false
+  clickCount = 0
+  currentBoard = ['', '', '', '', '', '', '', '', '']
+}
+
 const respondToSpaceSelection = event => {
+  event.preventDefault()
   const currentSpaceId = event.target.id
   if (event.target.innerHTML === '') {
     spaceSelectionSuccess(currentSpaceId)
@@ -43,7 +62,7 @@ const spaceSelectionSuccess = currentSpaceId => {
     over = true
     return $('#user-output').text(`Game Over. It's a Draw!`)
   }
-  $('#user-output').text(`Player ${players[(clickCount) % 2]}'s Turn`)
+  $('#user-output').text(`Player ${players[clickCount % 2]}'s Turn`)
 }
 
 const spaceSelectionFailure = () => { // ******remove braces if not needed******
@@ -68,5 +87,6 @@ const gameOver = () => { // ******remove braces if not needed******
 }
 
 module.exports = {
-  onSpaceClick
+  onSpaceClick,
+  onResetClick
 }

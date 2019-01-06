@@ -15,6 +15,8 @@ const onSignInSuccess = responseData => {
   $('#sign-up-or-in').hide()
   // show game board container
   $('#game-board').show()
+  // show reset button
+  $('#reset').show()
   // show change password and sign-out container
   $('#change-password-sign-out').show()
   // store user data for current session
@@ -39,6 +41,8 @@ const onSignOutSuccess = responseData => {
   $('#sign-up-or-in').show()
   // hide game board container
   $('#game-board').hide()
+  // hide reset button
+  $('#reset').hide()
   // hide change password and sign-out container
   $('#change-password-sign-out').hide()
   // remove user data for closed session
