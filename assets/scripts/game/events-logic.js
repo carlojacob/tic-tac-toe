@@ -15,6 +15,11 @@ const winningBoards = {
 }
 let over = false
 
+const resetBoardOnSignIn = () => {
+  resetVariables()
+  $('#game-board > div > div > div').html('')
+}
+
 const onSpaceClick = event => {
   event.preventDefault()
   respondToSpaceSelection(event)
@@ -29,6 +34,7 @@ const onResetClick = () => {
   $('#user-output').text(`Game Reset`)
   $('#user-output').append(`<p>Player ${players[clickCount % 2]}'s Turn</p>`)
   $('#game-board > div > div > div').off('click', gameOver)
+  // onGetGames() ******temporarily turn off******
 }
 
 const resetVariables = () => {
@@ -87,6 +93,7 @@ const gameOver = () => { // ******remove braces if not needed******
 }
 
 module.exports = {
+  resetBoardOnSignIn,
   onSpaceClick,
   onResetClick
 }

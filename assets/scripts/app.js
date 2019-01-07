@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const authenticationEvents = require('./auth/events')
-const gameEvents = require('./game/events')
+const gameEventsLogic = require('./game/events-logic')
 
 $('#game-board').hide() // ******temporarily display game-board on load, while working on game code******
 $('#change-password-sign-out').hide()
@@ -20,6 +20,6 @@ $(() => {
 })
 
 $(() => {
-  $('#game-board > div > div > div').on('click', gameEvents.onSpaceClick)
-  $('#reset').on('click', gameEvents.onResetClick)
+  $('#game-board > div > div > div').on('click', gameEventsLogic.onSpaceClick)
+  $('#reset').on('click', gameEventsLogic.onResetClick)
 })
