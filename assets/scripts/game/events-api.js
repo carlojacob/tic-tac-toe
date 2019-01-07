@@ -15,28 +15,25 @@ const getGamesOnSignIn = () => {
     .catch(() => console.log('All Game Data Could Not Be Retrieved'))
 }
 
-// ******temporarily turn off******
-//
-// const createGameOnSignIn = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/games',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-//     .then(gameData => {
-//       store.game = gameData.game
-//       console.log(store)
-//       console.log(store.game)
-//     })
-//     .catch(
-//       console.log('New Game Could Not Be Started')
-//     )
-// }
-
-// ******temporarily turn off******
+const createGameOnSignIn = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+    .then(gameData => {
+      store.game = gameData.game
+      console.log(store)
+      console.log(store.game)
+    })
+    .catch(
+      console.log('New Game Could Not Be Started')
+    )
+}
 
 module.exports = {
-  getGamesOnSignIn
+  getGamesOnSignIn,
+  createGameOnSignIn
 }

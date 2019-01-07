@@ -8,9 +8,9 @@
 const authenticationEvents = require('./auth/events')
 const gameEventsLogic = require('./game/events-logic')
 
-$('#game-board').hide() // ******temporarily display game-board on load, while working on game code******
+$('#game-board').hide()
 $('#change-password-sign-out').hide()
-$('#reset').hide() // ******temporarily reset on load, while working on game code******
+$('#reset').hide()
 
 $(() => {
   $('#sign-up').on('submit', authenticationEvents.onSignUp)
