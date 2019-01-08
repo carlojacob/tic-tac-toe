@@ -11,6 +11,8 @@ const signUp = formData => {
   })
 }
 
+// ******Toggle signIn to avoid entering info each time******
+
 const signIn = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -18,6 +20,24 @@ const signIn = formData => {
     data: formData
   })
 }
+
+// ******Toggle signIn to avoid entering info each time******
+
+// const signIn = () => {
+//   const formData = {
+//     credentials: {
+//       email: 'cj@cj.com',
+//       password: 'cj'
+//     }
+//   }
+//   return $.ajax({
+//     url: config.apiUrl + '/sign-in',
+//     method: 'POST',
+//     data: formData
+//   })
+// }
+
+// ******Toggle signIn to avoid entering info each time******
 
 const changePassword = formData => {
   return $.ajax({

@@ -24,7 +24,12 @@ const resetBoardOnSignIn = () => {
 
 const onSpaceClick = event => {
   event.preventDefault()
-  respondToSpaceSelection(event)
+  const currentSpaceId = event.target.id
+  if (event.target.innerHTML === '') {
+    spaceSelectionSuccess(currentSpaceId)
+  } else {
+    spaceSelectionFailure()
+  }
 }
 
 const onResetClick = () => {
@@ -45,22 +50,14 @@ const resetVariables = () => {
   currentBoard = ['', '', '', '', '', '', '', '', '']
 }
 
-const respondToSpaceSelection = event => {
-  event.preventDefault()
-  const currentSpaceId = event.target.id
-  if (event.target.innerHTML === '') {
-    spaceSelectionSuccess(currentSpaceId)
-  } else {
-    spaceSelectionFailure()
-  }
-}
-
 const spaceSelectionSuccess = currentSpaceId => {
-  $('#' + currentSpaceId).text(players[clickCount % 2])
-  currentBoard[currentSpaceId] = `${players[clickCount % 2]}`
-  checkForWin()
+  const currentPlayer = players[clickCount % 2]
+  $('#' + currentSpaceId).text(currentPlayer)
+  currentBoard[currentSpaceId] = `${currentPlayer}`
+  checkForWin(currentPlayer)
   if (over === true) {
     $('#game-board > div > div > div').on('click', gameOver)
+    eventsGameAPI.onUpdateGame(currentSpaceId, currentPlayer, over)
     return
   }
   clickCount += 1
@@ -68,24 +65,26 @@ const spaceSelectionSuccess = currentSpaceId => {
     $('#game-board > div > div > div').off('click', onSpaceClick)
     $('#game-board > div > div > div').on('click', gameOver)
     over = true
+    eventsGameAPI.onUpdateGame(currentSpaceId, currentPlayer, over)
     return $('#user-output').text(`Game Over. It's a Draw!`)
   }
   $('#user-output').text(`Player ${players[clickCount % 2]}'s Turn`)
+  eventsGameAPI.onUpdateGame(currentSpaceId, currentPlayer, over)
 }
 
 const spaceSelectionFailure = () => { // ******remove braces if not needed******
-  $('#user-output').text(`Space already selected! Player ${players[clickCount % 2]} Try Again`)
+  $('#user-output').text(`Space already selected! Player ${players[(clickCount + 1) % 2]} Try Again`)
 }
 
-const checkForWin = () => {
+const checkForWin = currentPlayer => {
   for (const key in winningBoards) {
     const winningBoard = winningBoards[key]
-    if (currentBoard[winningBoard[0]] === `${players[clickCount % 2]}` &&
-    currentBoard[winningBoard[1]] === `${players[clickCount % 2]}` &&
-    currentBoard[winningBoard[2]] === `${players[clickCount % 2]}`) {
+    if (currentBoard[winningBoard[0]] === `${currentPlayer}` &&
+    currentBoard[winningBoard[1]] === `${currentPlayer}` &&
+    currentBoard[winningBoard[2]] === `${currentPlayer}`) {
       over = true
       $('#game-board > div > div > div').off('click', onSpaceClick)
-      return $('#user-output').text(`Game Over. Player ${players[clickCount % 2]} Wins!`)
+      return $('#user-output').text(`Game Over. Player ${currentPlayer} Wins!`)
     }
   }
 }
