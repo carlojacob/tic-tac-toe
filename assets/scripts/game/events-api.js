@@ -1,7 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const getGamesOnSignIn = () => {
+const onGetGames = () => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -15,7 +15,7 @@ const getGamesOnSignIn = () => {
     .catch(() => console.log('All Game Data Could Not Be Retrieved'))
 }
 
-const createGameOnSignIn = () => {
+const onCreateGame = () => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -28,12 +28,10 @@ const createGameOnSignIn = () => {
       console.log(store)
       console.log(store.game)
     })
-    .catch(
-      console.log('New Game Could Not Be Started')
-    )
+    .catch(() => console.log('New Game Could Not Be Started'))
 }
 
 module.exports = {
-  getGamesOnSignIn,
-  createGameOnSignIn
+  onGetGames,
+  onCreateGame
 }

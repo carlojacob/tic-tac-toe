@@ -27,8 +27,7 @@ const onSignIn = event => {
 
     .then(responseData => {
       ui.onSignInSuccess(responseData)
-      eventsGameAPI.getGamesOnSignIn()
-      eventsGameAPI.createGameOnSignIn()
+      eventsGameAPI.onCreateGame()
     })
     .catch(ui.onSignInFailure)
 

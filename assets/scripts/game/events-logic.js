@@ -1,5 +1,7 @@
 'use strict'
 
+const eventsGameAPI = require('./events-api')
+
 let clickCount = 0
 const players = ['X', 'O']
 let currentBoard = ['', '', '', '', '', '', '', '', '']
@@ -29,12 +31,12 @@ const onResetClick = () => {
   if (over === true) {
     $('#game-board > div > div > div').on('click', onSpaceClick)
   }
+  eventsGameAPI.onCreateGame()
   resetVariables()
   $('#game-board > div > div > div').html('')
   $('#user-output').text(`Game Reset`)
   $('#user-output').append(`<p>Player ${players[clickCount % 2]}'s Turn</p>`)
   $('#game-board > div > div > div').off('click', gameOver)
-  // onGetGames() ******temporarily turn off******
 }
 
 const resetVariables = () => {
