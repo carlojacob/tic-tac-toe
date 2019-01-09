@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Indie Flower';
-  src: url('../../public/IndieFlower.ttf') format('cursive');
+  src: url('public/IndieFlower.ttf') format('truetype');
 }
 
 $title-color: $dark-slate-gray;
@@ -12,7 +12,7 @@ $title-color: $dark-slate-gray;
 
 .title {
   color: $dark-slate-gray;
-  font-family: sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-size: 10vmin;
   font-weight: bold;
 }
