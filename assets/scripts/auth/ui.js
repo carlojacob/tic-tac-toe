@@ -13,6 +13,8 @@ const onSignInSuccess = responseData => {
   $('#user-output').append('<p>Player X\'s turn<p>')
   // hide sign-up and sign-in container
   $('#sign-up-or-in').hide()
+  // show reset and history container
+  $(`#reset-and-history`).show()
   // show game board container
   $('#game-board').show()
   // show reset button
@@ -39,6 +41,8 @@ const onSignOutSuccess = responseData => {
   $('#user-output').text('Successfully Signed Out. Have a Great Day!')
   // show sign-up and sign-in container
   $('#sign-up-or-in').show()
+  // hide reset and history container
+  $(`#reset-and-history`).hide()
   // hide game board container
   $('#game-board').hide()
   // hide reset button

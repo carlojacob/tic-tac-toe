@@ -10,7 +10,7 @@ const gameEventsLogic = require('./game/events-logic')
 
 $('#game-board').hide()
 $('#change-password-sign-out').hide()
-$('#reset').hide()
+$('#reset-and-history').hide()
 
 $(() => {
   $('#sign-up').on('submit', authenticationEvents.onSignUp)

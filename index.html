@@ -13,6 +13,81 @@
     </head>
 
     <body>
+      <div id="sign-up-or-in" class="container">
+
+        <div class="row">
+
+          <div class="col-6 col-xl-6 auth-form">
+            <form class="credentials" id="sign-up">
+              <input type="email" name="credentials[email]" placeholder="Email Address">
+              <input type="text" name="credentials[password]" placeholder="Enter Password">
+              <input type="text" name="credentials[password_confirmation]" placeholder="Re-enter Password">
+              <button id="sign-up-button">Sign Up</button>
+            </form>
+          </div>
+
+          <div class="col-6 col-xl-6 auth-form">
+            <form class="credentials" id="sign-in">
+              <input type="email" name="credentials[email]" placeholder="Email Address">
+              <input type="text" name="credentials[password]" placeholder="Enter Password">
+              <button id="sign-in-button">Sign In</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="change-password-sign-out" class="container">
+
+        <div class="row">
+
+          <div class="col-6 col-xl-6 auth-form">
+            <form class="credentials" id="change-password">
+              <input type="text" name="passwords[old]" placeholder="Enter Old Password">
+              <input type="text" name="passwords[new]" placeholder="Enter New Password">
+              <button id="change-password-button">Change Password</button>
+            </form>
+          </div>
+
+          <div class="col-6 col-xl-6 auth-form">
+            <form class="credentials" id="sign-out">
+              <button id="sign-out-button">Sign Out</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div  id="reset-and-history" class="container">
+
+        <div class="row">
+
+          <div class="col-6 col-xl-6 reset-and-history">
+            <button id="reset-button">Reset/Start New Game</button>
+          </div>
+
+          <div class="col-6 col-xl-6 reset-and-history">
+            <button id="game-history-button">Game History</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container user-output">
+
+        <div class="row">
+
+          <div class="col-12 col-xl-12 user-output">
+            <p id="user-output"></p>
+          </div>
+
+        </div>
+
+      </div>
+
       <div id="game-board" class="container">
         <div class="col-12 col-xl-12 board-background">
 
@@ -37,62 +112,5 @@
         </div>
       </div>
 
-      <div id="sign-up-or-in" class="container sign-up-or-in">
-
-        <div class="row">
-
-          <div class="col-6 col-xl-6 space">
-            <form class="credentials" id="sign-up">
-              <input type="email" name="credentials[email]" placeholder="Email Address">
-              <input type="text" name="credentials[password]" placeholder="Enter Password">
-              <input type="text" name="credentials[password_confirmation]" placeholder="Re-enter Password">
-              <button id="sign-up-button">Sign Up</button>
-            </form>
-          </div>
-
-          <div class="col-6 col-xl-6 space">
-            <form class="credentials" id="sign-in">
-              <input type="email" name="credentials[email]" placeholder="Email Address">
-              <input type="text" name="credentials[password]" placeholder="Enter Password">
-              <button id="sign-in-button">Sign In</button>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-12 col-xl-12 user-output">
-            <p id="user-output"></p>
-            <button id="reset">Reset/Start New Game</button>
-          </div>
-        </div>
-
-        <div id="change-password-sign-out" class="container change-password-sign-out">
-
-          <div class="row">
-
-            <div class="col-6 col-xl-6 space">
-              <form class="credentials" id="change-password">
-                <input type="text" name="passwords[old]" placeholder="Enter Old Password">
-                <input type="text" name="passwords[new]" placeholder="Enter New Password">
-                <button id="change-password-button">Change Password</button>
-              </form>
-            </div>
-
-            <div class="col-6 col-xl-6 space">
-              <form class="credentials" id="sign-out">
-                <button id="sign-out-button">Sign Out</button>
-              </form>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
     </body>
 </html>

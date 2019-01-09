@@ -3,8 +3,17 @@ body {
   max-width: 660px;
 }
 
-.board-background {
+.auth-form {
+  align-items: center;
+  border: 1px solid $near-black;
+  display: flex;
+  justify-content: center;
   margin: 20px auto;
+  padding: 10px;
+}
+
+.board-background {
+  margin: 10px auto 30px;
 }
 
 .credentials {
@@ -13,23 +22,23 @@ body {
   text-align: center;
 }
 
-.sign-up-or-in {
+.reset-and-history {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   margin: 20px auto;
+  padding: 10px;
 }
 
 .space {
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid $near-black;
   display: flex;
-  height: 200px;
+  height: 180px;
   justify-content: center;
 }
 
-.update-password-sign-out {
-  margin: 20px auto;
-}
-
 .user-output {
-  margin: 10px auto 10px;
+  margin: 10px auto;
   text-align: center;
 }
