@@ -1,58 +1,42 @@
-const config = require('../config')
-const store = require('../store')
+'use strict'
+
+const api = require('./api')
+const ui = require('./ui')
 
 const onGetGames = () => {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-    .then(gamesData => {
-      store.games = gamesData.games
-    })
-    .catch(() => console.log('All Game Data Could Not Be Retrieved'))
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
+}
+
+const onGetOverGames = isOver => {
+  api.getOverGames(isOver)
+    .then(ui.getOverGamesSuccess)
+    .catch(ui.getOverGamesFailure)
+}
+
+const onGetGame = () => {
+  api.getGame()
+    .then(ui.getGameSuccess)
+    .catch(ui.getGameFailure)
 }
 
 const onCreateGame = () => {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-    .then(gameData => {
-      store.game = gameData.game
-    })
-    .catch(() => console.log('New Game Could Not Be Started'))
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
 }
 
 const onUpdateGame = (index, value, over) => {
-  return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {game: {
-      cell: {
-        index: index,
-        value: value
-      },
-      over: over
-    }
-    }
-  })
-    .then(gameData => {
-      store.game = gameData.game
-    })
-    .catch(() => console.log('Game Board Could Not Be Updated'))
+  api.updateGame(index, value, over)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 
 module.exports = {
   onGetGames,
+  onGetOverGames,
+  onGetGame,
   onCreateGame,
   onUpdateGame
 }

@@ -11,6 +11,10 @@ const gameEventsLogic = require('./game/events-logic')
 $('#game-board').hide()
 $('#change-password-sign-out').hide()
 $('#reset-and-history').hide()
+for (let i = 0; i < 6; i++) {
+  $('#history-output' + i).hide()
+}
+$('#ok').hide()
 
 $(() => {
   $('#sign-up').on('submit', authenticationEvents.onSignUp)
@@ -22,4 +26,6 @@ $(() => {
 $(() => {
   $('#game-board > div > div > div').on('click', gameEventsLogic.onSpaceClick)
   $('#reset').on('click', gameEventsLogic.onResetClick)
+  $('#game-history').on('click', gameEventsLogic.onGameHistoryClick)
+  $('#ok-button').on('click', gameEventsLogic.onOKClick)
 })
