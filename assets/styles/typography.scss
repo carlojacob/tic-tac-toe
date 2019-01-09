@@ -1,4 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+$title-color: $dark-slate-gray;
+
 .board {
   font-family: cursive;
-  font-size: 60px;
+  font-size: 10vmin;
+}
+
+.title {
+  color: $dark-slate-gray;
+  font-family: 'Indie Flower', cursive;
+  font-size: 10vmin;
+  font-weight: bold;
+}
+
+@media (max-width: 414px) {
+  .board {
+    // font-size: 45px;
+  }
+
+  // .space {
+  //   height: 100px;
+  // }
+
+  .standard {
+    font-size: 12px;
+  }
+
+  .title {
+    // font-size:
+  }
 }

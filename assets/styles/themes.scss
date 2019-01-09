@@ -1,19 +1,65 @@
+$game-board-border-color: $near-black;
+$button-background-color: $light-gray;
+$input-border-color: $dark-gray;
+
+$board-background-dims: 60vmin;
+$board-space-dims: calc($board-background-dims / 3);
+
 body {
   margin: 0 auto;
-  max-width: 660px;
+  width: 70vmin;
+}
+
+button {
+  background-color: $button-background-color;
+  border-radius: 5px;
+  margin: 2px auto;
+}
+
+input {
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  margin: 2px auto;
 }
 
 .auth-form {
   align-items: center;
-  border: 1px solid $near-black;
+  border: 1px solid $game-board-border-color;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   padding: 10px;
 }
 
 .board-background {
+  height: $board-background-dims;
   margin: 0 auto 30px;
+  width: $board-background-dims;
+}
+
+.col-4 {
+  align-items: center;
+  display: flex;
+  height: calc(100% / 3);
+  justify-content: center;
+  width: calc(100% / 3);
+
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+  &:nth-last-child(3n) {
+    border-left: 0;
+  }
+
+  &:nth-child(n-6) {
+    border-top: 0;
+  }
+
+  &:nth-last-child(-n+3) {
+    border-bottom: 0;
+  }
 }
 
 .credentials {
@@ -23,7 +69,7 @@ body {
 }
 
 .history-output {
-  margin: 10px auto 0;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -37,7 +83,7 @@ body {
   border-top: 3px solid $near-black;
   display: flex;
   justify-content: center;
-  margin: 10px auto 0;
+  margin: 10px auto;
   padding: 25px 0 0;
 }
 
@@ -45,11 +91,21 @@ body {
   align-items: center;
   border: 1px solid $near-black;
   display: flex;
-  height: 180px;
   justify-content: center;
+}
+
+.title {
+  margin: 30px auto 20px;
+  text-align: center;
 }
 
 .user-output {
   margin: 10px auto 0;
   text-align: center;
+}
+
+@media (max-width: 414px) {
+  body {
+    width: 85vmin;
+  }
 }
