@@ -73,7 +73,7 @@ const spaceSelectionSuccess = currentSpaceId => {
 }
 
 const spaceSelectionFailure = () => { // ******remove braces if not needed******
-  $('#user-output').text(`Space already selected! Player ${players[(clickCount + 1) % 2]} Try Again`)
+  $('#user-output').text(`Space already selected! Player ${players[clickCount % 2]} Try Again`)
 }
 
 const checkForWin = currentPlayer => {
