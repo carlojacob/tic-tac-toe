@@ -13,7 +13,7 @@ body {
 }
 
 .board-background {
-  margin: 10px auto 30px;
+  margin: 0 auto 30px;
 }
 
 .credentials {
@@ -24,10 +24,11 @@ body {
 
 .reset-and-history {
   align-items: center;
+  border-top: 3px solid $near-black;
   display: flex;
   justify-content: center;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 10px auto 0;
+  padding: 25px 0 0;
 }
 
 .space {
@@ -39,6 +40,6 @@ body {
 }
 
 .user-output {
-  margin: 10px auto;
+  margin: 10px auto 0;
   text-align: center;
 }
