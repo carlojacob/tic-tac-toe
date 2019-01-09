@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@font-face {
+  font-family: 'Indie Flower';
+  src: url('../../public/IndieFlower.ttf') format('cursive');
+}
 
 $title-color: $dark-slate-gray;
 
 .board {
-  font-family: cursive;
+  font-family: sans-serif, cursive;
   font-size: 10vmin;
 }
 
 .title {
   color: $dark-slate-gray;
-  font-family: 'Indie Flower', cursive;
+  font-family: sans-serif;
   font-size: 10vmin;
   font-weight: bold;
 }
