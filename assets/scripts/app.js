@@ -5,9 +5,12 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+
+// Require files referenced in this document
 const authenticationEvents = require('./auth/events')
 const gameEventsLogic = require('./game/events-logic')
 
+// Items hidden on initial page load
 $('#game-board').hide()
 $('#change-password-sign-out').hide()
 $('#reset-and-history').hide()
@@ -16,6 +19,7 @@ for (let i = 0; i < 6; i++) {
 }
 $('#ok').hide()
 
+// Click events for authentication forms
 $(() => {
   $('#sign-up').on('submit', authenticationEvents.onSignUp)
   $('#sign-in').on('submit', authenticationEvents.onSignIn)
@@ -23,6 +27,7 @@ $(() => {
   $('#sign-out').on('submit', authenticationEvents.onSignOut)
 })
 
+// Click events for game play, reset and history
 $(() => {
   $('#game-board > div > div > div').on('click', gameEventsLogic.onSpaceClick)
   $('#reset').on('click', gameEventsLogic.onResetClick)

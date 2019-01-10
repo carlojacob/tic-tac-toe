@@ -1,5 +1,6 @@
 'use strict'
 
+// Automatically determine URL (production or development) of API depending on hostname
 let apiUrl
 const apiUrls = {
   production: 'https://aqueous-atoll-85096.herokuapp.com',

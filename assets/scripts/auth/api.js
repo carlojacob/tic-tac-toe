@@ -1,8 +1,10 @@
 'use strict'
 
+// Require files referenced in this document
 const config = require('../config')
 const store = require('../store')
 
+// API request using AJAX (POST) for click on sign up button
 const signUp = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -11,8 +13,7 @@ const signUp = formData => {
   })
 }
 
-// ******Toggle signIn to avoid entering info each time******
-
+// API request using AJAX (POST) for click on sign in button
 const signIn = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -21,24 +22,7 @@ const signIn = formData => {
   })
 }
 
-// ******Toggle signIn to avoid entering info each time******
-
-// const signIn = () => {
-//   const formData = {
-//     credentials: {
-//       email: 'cj@cj.com',
-//       password: 'cj'
-//     }
-//   }
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-in',
-//     method: 'POST',
-//     data: formData
-//   })
-// }
-
-// ******Toggle signIn to avoid entering info each time******
-
+// API request using AJAX (PATCH) for click on change password button
 const changePassword = formData => {
   return $.ajax({
     url: config.apiUrl + '/change-password',
@@ -50,6 +34,7 @@ const changePassword = formData => {
   })
 }
 
+// API request using AJAX (DELETE) for click on sign out button
 const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',

@@ -1,11 +1,13 @@
 'use strict'
 
+// Require files referenced in this document
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const eventsGameLogic = require('../game/events-logic')
 const eventsGameAPI = require('../game/events-api')
 
+// Handler for click on sign up button
 const onSignUp = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
@@ -18,6 +20,7 @@ const onSignUp = event => {
   $('form').trigger('reset')
 }
 
+// Handler for click on sign in button
 const onSignIn = event => {
   event.preventDefault()
   eventsGameLogic.resetBoardOnSignIn()
@@ -34,6 +37,7 @@ const onSignIn = event => {
   $('form').trigger('reset')
 }
 
+// Handler for click on change password button
 const onChangePassword = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
@@ -46,6 +50,7 @@ const onChangePassword = event => {
   $('form').trigger('reset')
 }
 
+// Handler for click on sign out button
 const onSignOut = event => {
   event.preventDefault()
 
