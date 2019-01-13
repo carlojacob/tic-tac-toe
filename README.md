@@ -6,8 +6,8 @@ The Github repository for this project is located here:
 <https://github.com/carlojacob/game-project-client>
 
 ### Wireframes
-Initial wireframes are displayed at the following link(s):  
-[Wireframes pg 1](https://i.imgur.com/57lLYj1.jpg)
+Initial wireframes are displayed at the following link(s):
+[Wireframes pg 1](https://i.imgur.com/57lLYj1.jpg)  
 [Wireframes pg 2](https://i.imgur.com/kNJprN7.jpg)
 
 ### User Stories
