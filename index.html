@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <!-- div containing Title Text -->
+      <div class="title">
+          <h4 class="title">Tic-Tac-Toe</h4>
+      </div>
+
+      <!-- div (container) with sign up and sign in forms -->
+      <div id="sign-up-or-in" class="container-flex">
+
+        <div class="row">
+          <!-- Sign up form -->
+          <div class="col-12 col-sm-6 auth-form standard">
+            <form class="credentials" id="sign-up">
+              <input type="email" name="credentials[email]" placeholder="Email Address">
+              <input type="password" name="credentials[password]" placeholder="Enter Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Re-enter Password">
+              <button id="sign-up-button">Sign Up</button>
+            </form>
+          </div>
+
+          <!-- Sign in form -->
+          <div class="col-12 col-sm-6 auth-form standard">
+            <form class="credentials" id="sign-in">
+              <input type="email" name="credentials[email]" placeholder="Email Address">
+              <input type="password" name="credentials[password]" placeholder="Enter Password">
+              <button id="sign-in-button">Sign In</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) with change password and sign out forms -->
+      <div id="change-password-sign-out" class="container">
+
+        <div class="row">
+
+          <!-- Change password form -->
+          <div class="col-12 col-sm-6 auth-form standard">
+            <form class="credentials" id="change-password">
+              <input type="password" name="passwords[old]" placeholder="Enter Old Password">
+              <input type="password" name="passwords[new]" placeholder="Enter New Password">
+              <button id="change-password-button">Change Password</button>
+            </form>
+          </div>
+
+          <!-- Sign out form -->
+          <div class="col-12 col-sm-6 auth-form standard">
+            <form class="credentials" id="sign-out">
+              <button id="sign-out-button">Sign Out</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) with rest and game history buttons -->
+      <div  id="reset-and-history" class="container">
+
+        <div class="row">
+
+          <!-- Reset button -->
+          <div class="col-6 col-sm-6 reset-and-history standard">
+            <button id="reset">Reset/Start New Game</button>
+          </div>
+
+          <!-- Game history button -->
+          <div class="col-6 col-sm-6 reset-and-history standard">
+            <button id="game-history">Game History</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) for output text to user during game -->
+      <div class="container user-output">
+
+        <div class="row">
+
+          <div class="col-12 col-xl-12 user-output standard">
+            <p id="user-output"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) to output game history text to user -->
+      <div id="history-text" class="container history-output">
+
+        <div class="row">
+
+          <div class="col-12 col-xl-12 history-output standard">
+            <p id="history-output0">Please wait while we load your data...</p>
+            <p id="history-output1">Game History</p>
+            <p id="history-output2"></p>
+            <p id="history-output3"></p>
+            <p id="history-output4"></p>
+            <p id="history-output5"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) with OK button after game history output -->
+      <div  id="ok" class="container">
+
+        <div class="row">
+
+          <div class="col-12 col-xl-12 ok-button standard">
+            <button id="ok-button">OK</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- div (container) representing the boxes on the game board -->
+      <div id="game-board" class="container">
+        <div class="col-12 col-xl-12">
+
+          <div class="row board-background">
+            <div id=0 class="col-4 col-xl-4 board space"></div>
+            <div id=1 class="col-4 col-xl-4 board space"></div>
+            <div id=2 class="col-4 col-xl-4 board space"></div>
+
+            <div id=3 class="col-4 col-xl-4 board space"></div>
+            <div id=4 class="col-4 col-xl-4 board space"></div>
+            <div id=5 class="col-4 col-xl-4 board space"></div>
+
+            <div id=6 class="col-4 col-xl-4 board space"></div>
+            <div id=7 class="col-4 col-xl-4 board space"></div>
+            <div id=8 class="col-4 col-xl-4 board space"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </body>
+</html>
